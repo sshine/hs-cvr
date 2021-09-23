@@ -16,6 +16,7 @@ library
       Participant
       ParticipantRelation
       Shared
+      CVR.Search
   other-modules:
       EventSourcing
       Process
@@ -29,8 +30,11 @@ library
   build-depends:
       aeson
     , base
+    , blaze-markup
     , bytestring
+    , heterocephalus
     , optparse-generic
+    , req
     , text
     , time
     , vector
@@ -47,9 +51,12 @@ executable cvr
   build-depends:
       aeson
     , base
+    , blaze-markup
     , bytestring
     , cvr
+    , heterocephalus
     , optparse-generic
+    , req
     , text
     , time
     , vector
@@ -69,11 +76,14 @@ test-suite test
   build-depends:
       aeson
     , base
+    , blaze-markup
     , bytestring
     , cvr
     , hedgehog
+    , heterocephalus
     , hspec
     , optparse-generic
+    , req
     , tasty
     , tasty-discover
     , tasty-hedgehog
@@ -98,9 +108,12 @@ benchmark bench
   build-depends:
       aeson
     , base
+    , blaze-markup
     , bytestring
     , cvr
+    , heterocephalus
     , optparse-generic
+    , req
     , tasty-bench
     , text
     , time

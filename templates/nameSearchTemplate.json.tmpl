@@ -1,0 +1,17 @@
+{
+  "query": {
+    "bool": {
+      "minimum_should_match": 1,
+      "should": [
+        {
+          "match_phrase_prefix": {
+            "Vrvirksomhed.virksomhedMetadata.nyesteNavn.navn": {
+              "query": "#{queryString}",
+              "max_expansions": 100
+            }
+          }
+        }
+      ]
+    }
+  }
+}

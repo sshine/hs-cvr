@@ -11,6 +11,9 @@ dependencies:
   - aeson
   - vector
   - bytestring
+  - heterocephalus
+  - blaze-markup
+  - req
 
 default-extensions:
   - OverloadedStrings
@@ -23,6 +26,7 @@ library:
     - Participant
     - ParticipantRelation
     - Shared
+    - CVR.Search
   source-dirs: src
 
 executables:
