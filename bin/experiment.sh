@@ -6,15 +6,15 @@ if [ -z "$CVR_USER" -o -z "$CVR_PASS" ]; then
 fi
 
 cvr_req() {
-    URL=$1
-    QUERY=$2
-    curl -v -u "$USER:$PASS" -H "Content-Type: application/json" -XPOST "$URL" -d"$QUERY"
+    URL="$1"
+    QUERY="$2"
+    curl -v -u "$CVR_USER:$CVR_PASS" -H "Content-Type: application/json" -XPOST "$URL" -d"$QUERY"
     echo
 }
 
 cvr_mapping() {
     URL=$1
-    curl -v -u "$USER:$PASS" -H "Content-Type: application/json" -XGET "http://distribution.virk.dk/cvr-permanent"
+    curl -v -u "$CVR_USER:$CVR_PASS" -H "Content-Type: application/json" -XGET "http://distribution.virk.dk/cvr-permanent"
     echo
 }
 
@@ -34,8 +34,32 @@ cvr_req_cvr() {
                   }
                }
          }"
- }
+}
 
+# cvr_req_cvr 32345794
 # cvr_req_cvr 41834226
-cvr_req_cvr 32345794
-# cvr_mapping
+
+cvr_req_name() {
+    COMPANY_NAME=$1
+    QUERY="{
+             \"query\": {
+                 \"bool\": {
+                     \"minimum_should_match\": 1,
+                     \"should\": [
+                        {
+                            \"match_phrase_prefix\": {
+                                \"Vrvirksomhed.virksomhedMetadata.nyesteNavn.navn\": {
+                                    \"query\": \"$COMPANY_NAME\",
+                                    \"max_expansions\": 100
+                                }
+                            }
+                        }
+                    ]
+                 }
+             }
+         }"
+
+    cvr_req "http://distribution.virk.dk/cvr-permanent/virksomhed/_search" "$QUERY"
+}
+
+cvr_req_name "Shine"

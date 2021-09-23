@@ -18,17 +18,22 @@ library
       Shared
   other-modules:
       EventSourcing
+      Process
       Paths_cvr
   hs-source-dirs:
       src
   default-extensions:
       OverloadedStrings
       StandaloneDeriving
+      FlexibleContexts
   build-depends:
-      base
+      aeson
+    , base
+    , bytestring
     , optparse-generic
     , text
     , time
+    , vector
   default-language: Haskell2010
 
 executable cvr
@@ -38,12 +43,16 @@ executable cvr
   default-extensions:
       OverloadedStrings
       StandaloneDeriving
+      FlexibleContexts
   build-depends:
-      base
+      aeson
+    , base
+    , bytestring
     , cvr
     , optparse-generic
     , text
     , time
+    , vector
   default-language: Haskell2010
 
 test-suite test
@@ -56,8 +65,11 @@ test-suite test
   default-extensions:
       OverloadedStrings
       StandaloneDeriving
+      FlexibleContexts
   build-depends:
-      base
+      aeson
+    , base
+    , bytestring
     , cvr
     , hedgehog
     , hspec
@@ -68,6 +80,7 @@ test-suite test
     , tasty-hspec
     , text
     , time
+    , vector
   default-language: Haskell2010
 
 benchmark bench
@@ -80,12 +93,16 @@ benchmark bench
   default-extensions:
       OverloadedStrings
       StandaloneDeriving
+      FlexibleContexts
   ghc-options: -O2
   build-depends:
-      base
+      aeson
+    , base
+    , bytestring
     , cvr
     , optparse-generic
     , tasty-bench
     , text
     , time
+    , vector
   default-language: Haskell2010

@@ -8,9 +8,14 @@ dependencies:
   - optparse-generic
   - text
   - time
+  - aeson
+  - vector
+  - bytestring
 
 default-extensions:
   - OverloadedStrings
+  - StandaloneDeriving
+  - FlexibleContexts
 
 library:
   exposed-modules:

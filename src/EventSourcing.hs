@@ -1,6 +1,22 @@
 
 module EventSourcing where
 
+import Data.Text (Text)
+import Data.Time.Clock (NominalDiffTime)
+
+data Knowledge property = Knowledge
+  { knowledgeProperty :: property
+  , knowledgeTime :: KnowledgeTime
+  }
+
+--deriving instance Eq property => Eq (Knowledge property)
+--deriving instance Ord property => Ord (Knowledge property)
+deriving instance Show property => Show (Knowledge property)
+
+data KnowledgeTime
+  = Interval (Maybe NominalDiffTime) (Maybe NominalDiffTime)
+  deriving (Eq, Ord, Show)
+
 -- Event Sourcing
 --
 -- Scan the CVR Vrvirksomhed structure and produce events.
@@ -11,11 +27,4 @@ module EventSourcing where
 --
 -- The time at which something is true is either a point, or a (possibly open) interval.
 
-data Knowledge property = Knowledge
-  { knowledgeProperty :: property
-  , knowledgeTime :: KnowledgeTime
-  } deriving (Eq, Ord, Show)
 
-data KnowledgeTime
-  = Point Time
-  | Interval (Maybe NominalDiffTime) (Maybe NominalDiffTime)

@@ -27,9 +27,11 @@ data CompanyNumber = CompanyNumber
   } deriving (Eq, Ord, Show)
 
 data CompanyNumberType
-  = CVRNumber
+  = CvrNumber
+  | RegNumber
   | PNumber
   | SENumber
+  | UnitNumber -- enhedsnummer
   deriving (Eq, Ord, Show)
 
 data Industry = Industry
