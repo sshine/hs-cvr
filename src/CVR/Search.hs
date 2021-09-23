@@ -38,18 +38,17 @@ instance ToJSON SearchQuery where
 searchReq :: SearchQuery -> IO ()
 searchReq searchQuery = do
   cvrHost <- Text.pack <$> Env.getEnv "CVR_HOST"
-  cvrPort <- read <$> Env.getEnv "CVR_PORT"
   cvrUser <- BS.pack <$> Env.getEnv "CVR_USER"
   cvrPass <- BS.pack <$> Env.getEnv "CVR_PASS"
   runReq tmpHttpConfig $ do
     let payload = toJSON searchQuery
-    r <- req POST (https cvrHost /: "/cvr-permanent/virksomhed/_search")
+    r <- req POST (http cvrHost /: "cvr-permanent/virksomhed/_search")
                   (ReqBodyJson payload)
-                  bsResponse -- jsonResponse
-                  (basicAuth cvrUser cvrPass <> port cvrPort)
+                  jsonResponse -- bsResponse
+                  (basicAuthUnsafe cvrUser cvrPass)
 
-    -- liftIO $ print (responseBody r :: Value)
-    liftIO $ print (responseBody r :: ByteString)
+    liftIO $ print (responseBody r :: Value)
+    -- liftIO $ print (responseBody r :: ByteString)
   where
     tmpHttpConfig = defaultHttpConfig
       { httpConfigRetryPolicy = tmpRetryPolicy
@@ -58,3 +57,14 @@ searchReq searchQuery = do
 tmpRetryPolicy :: (Monad m) => RetryPolicyM m
 tmpRetryPolicy = Retry.constantDelay 50 <> Retry.limitRetries 1
 
+mappingReq :: IO ()
+mappingReq = do
+  cvrHost <- Text.pack <$> Env.getEnv "CVR_HOST"
+  cvrUser <- BS.pack <$> Env.getEnv "CVR_USER"
+  cvrPass <- BS.pack <$> Env.getEnv "CVR_PASS"
+  runReq defaultHttpConfig $ do
+    r <- req GET (http cvrHost /: "cvr-permanent")
+                 NoReqBody
+                 jsonResponse
+                 (basicAuthUnsafe cvrUser cvrPass)
+    liftIO $ print (responseBody r :: Value)
