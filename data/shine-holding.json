@@ -1,0 +1,779 @@
+{
+  "took": 112,
+  "timed_out": false,
+  "_shards": {
+    "total": 6,
+    "successful": 6,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 12.455619,
+    "hits": [
+      {
+        "_index": "cvr-v-20200115",
+        "_type": "_doc",
+        "_id": "4008634791",
+        "_score": 12.455619,
+        "_source": {
+          "Vrvirksomhed": {
+            "cvrNummer": 41834226,
+            "regNummer": [],
+            "brancheAnsvarskode": null,
+            "reklamebeskyttet": false,
+            "navne": [
+              {
+                "navn": "Shine Holding ApS",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "binavne": [],
+            "postadresse": [],
+            "beliggenhedsadresse": [
+              {
+                "landekode": "DK",
+                "fritekst": null,
+                "vejkode": 7120,
+                "kommune": {
+                  "kommuneKode": 101,
+                  "kommuneNavn": "KØBENHAVN",
+                  "periode": {
+                    "gyldigFra": "2007-01-01",
+                    "gyldigTil": null
+                  },
+                  "sidstOpdateret": "2006-11-13T00:00:00.000+01:00"
+                },
+                "husnummerFra": 95,
+                "adresseId": "0a3f50a0-fae6-32b8-e044-0003ba298018",
+                "sidstValideret": "2020-11-10T14:29:30.492+01:00",
+                "husnummerTil": null,
+                "bogstavFra": null,
+                "bogstavTil": null,
+                "etage": "4",
+                "sidedoer": "tv",
+                "conavn": null,
+                "postboks": null,
+                "vejnavn": "Sundholmsvej",
+                "bynavn": null,
+                "postnummer": 2300,
+                "postdistrikt": "København S",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "telefonNummer": [],
+            "telefaxNummer": [],
+            "sekundaertTelefonNummer": [],
+            "sekundaertTelefaxNummer": [],
+            "elektroniskPost": [],
+            "hjemmeside": [],
+            "obligatoriskEmail": [],
+            "livsforloeb": [
+              {
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "hovedbranche": [
+              {
+                "branchekode": "642020",
+                "branchetekst": "Ikke-finansielle holdingselskaber",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "bibranche1": [],
+            "bibranche2": [],
+            "bibranche3": [],
+            "status": [],
+            "virksomhedsstatus": [
+              {
+                "status": "NORMAL",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "virksomhedsform": [
+              {
+                "virksomhedsformkode": 80,
+                "kortBeskrivelse": "APS",
+                "langBeskrivelse": "Anpartsselskab",
+                "ansvarligDataleverandoer": "E&S",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "aarsbeskaeftigelse": [],
+            "kvartalsbeskaeftigelse": [],
+            "maanedsbeskaeftigelse": [],
+            "erstMaanedsbeskaeftigelse": [],
+            "attributter": [
+              {
+                "sekvensnr": 0,
+                "type": "EJERREGISTRERING_UNDER_5_PROCENT",
+                "vaerditype": "boolean",
+                "vaerdier": [
+                  {
+                    "vaerdi": "false",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "FORMÅL",
+                "vaerditype": "string",
+                "vaerdier": [
+                  {
+                    "vaerdi": "Selskabets formål er direkte eller indirekte at eje kapitalandele i andre selskaber, samt andre dertil relaterede aktiviteter.",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "FØRSTE_REGNSKABSPERIODE_SLUT",
+                "vaerditype": "date",
+                "vaerdier": [
+                  {
+                    "vaerdi": "2021-12-31",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "FØRSTE_REGNSKABSPERIODE_START",
+                "vaerditype": "date",
+                "vaerdier": [
+                  {
+                    "vaerdi": "2020-11-06",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "KAPITAL",
+                "vaerditype": "decimal",
+                "vaerdier": [
+                  {
+                    "vaerdi": "40000.00",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "KAPITALKLASSER",
+                "vaerditype": "boolean",
+                "vaerdier": [
+                  {
+                    "vaerdi": "false",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "KAPITALVALUTA",
+                "vaerditype": "string",
+                "vaerdier": [
+                  {
+                    "vaerdi": "DKK",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "KAPITAL_DELVIST",
+                "vaerditype": "boolean",
+                "vaerdier": [
+                  {
+                    "vaerdi": "false",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "OMFATTET_AF_LOV_OM_HVIDVASK_OG_TERRORFINANSIERING",
+                "vaerditype": "string",
+                "vaerdier": [
+                  {
+                    "vaerdi": "IKKE_OMFATTET",
+                    "periode": {
+                      "gyldigFra": "2020-11-10",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:36:26.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "PSEUDOCVRNR",
+                "vaerditype": "boolean",
+                "vaerdier": [
+                  {
+                    "vaerdi": "false",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "REGNSKABSÅR_SLUT",
+                "vaerditype": "gMonthDay",
+                "vaerdier": [
+                  {
+                    "vaerdi": "--12-31",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "REGNSKABSÅR_START",
+                "vaerditype": "gMonthDay",
+                "vaerdier": [
+                  {
+                    "vaerdi": "--01-01",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "REVISION_FRAVALGT",
+                "vaerditype": "boolean",
+                "vaerdier": [
+                  {
+                    "vaerdi": "true",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "TEGNINGSREGEL",
+                "vaerditype": "string",
+                "vaerdier": [
+                  {
+                    "vaerdi": "Selskabet tegnes af direktøren.",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              },
+              {
+                "sekvensnr": 0,
+                "type": "VEDTÆGT_SENESTE",
+                "vaerditype": "date",
+                "vaerdier": [
+                  {
+                    "vaerdi": "2020-11-06",
+                    "periode": {
+                      "gyldigFra": "2020-11-06",
+                      "gyldigTil": null
+                    },
+                    "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                  }
+                ]
+              }
+            ],
+            "penheder": [
+              {
+                "pNummer": 1026454413,
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              }
+            ],
+            "deltagerRelation": [
+              {
+                "deltager": {
+                  "enhedsNummer": 4000703318,
+                  "enhedstype": "PERSON",
+                  "forretningsnoegle": null,
+                  "organisationstype": null,
+                  "sidstIndlaest": "2021-09-10T08:23:43.530+02:00",
+                  "sidstOpdateret": "2021-08-31T08:47:00.000+02:00",
+                  "navne": [
+                    {
+                      "navn": "Stephen Prema Shine",
+                      "periode": {
+                        "gyldigFra": null,
+                        "gyldigTil": null
+                      },
+                      "sidstOpdateret": null
+                    }
+                  ],
+                  "adresseHemmelig": false,
+                  "adresseHemmeligUndtagelse": false,
+                  "adresseOpdateringOphoert": false,
+                  "beliggenhedsadresse": [
+                    {
+                      "landekode": "DK",
+                      "fritekst": null,
+                      "vejkode": 7120,
+                      "kommune": {
+                        "kommuneKode": 101,
+                        "kommuneNavn": "KØBENHAVN",
+                        "periode": {
+                          "gyldigFra": "2007-01-01",
+                          "gyldigTil": null
+                        },
+                        "sidstOpdateret": "2006-11-12T23:00:00.000Z"
+                      },
+                      "husnummerFra": 95,
+                      "adresseId": "0a3f50a0-fae6-32b8-e044-0003ba298018",
+                      "sidstValideret": "2021-08-31T06:47:09.643Z",
+                      "husnummerTil": null,
+                      "bogstavFra": null,
+                      "bogstavTil": null,
+                      "etage": "4",
+                      "sidedoer": "tv",
+                      "conavn": "c/o Simon Shine",
+                      "postboks": null,
+                      "vejnavn": "Sundholmsvej",
+                      "bynavn": null,
+                      "postnummer": 2300,
+                      "postdistrikt": "København S",
+                      "periode": {
+                        "gyldigFra": "2020-08-31",
+                        "gyldigTil": null
+                      },
+                      "sidstOpdateret": "2021-08-31T06:47:00.000Z"
+                    }
+                  ],
+                  "postadresse": []
+                },
+                "kontorsteder": [],
+                "organisationer": [
+                  {
+                    "enhedsNummerOrganisation": 4008634790,
+                    "hovedtype": "LEDELSESORGAN",
+                    "organisationsNavn": [
+                      {
+                        "navn": "Direktion",
+                        "periode": {
+                          "gyldigFra": "2020-11-06",
+                          "gyldigTil": null
+                        },
+                        "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                      }
+                    ],
+                    "attributter": [
+                      {
+                        "sekvensnr": 0,
+                        "type": "FUNKTION",
+                        "vaerditype": "string",
+                        "vaerdier": [
+                          {
+                            "vaerdi": "Direktion",
+                            "periode": {
+                              "gyldigFra": "2020-11-06",
+                              "gyldigTil": null
+                            },
+                            "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                          }
+                        ]
+                      }
+                    ],
+                    "medlemsData": [
+                      {
+                        "attributter": [
+                          {
+                            "sekvensnr": 0,
+                            "type": "FUNKTION",
+                            "vaerditype": "string",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "DIREKTØR",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "enhedsNummerOrganisation": 4008634789,
+                    "hovedtype": "STIFTERE",
+                    "organisationsNavn": [
+                      {
+                        "navn": "Stiftere",
+                        "periode": {
+                          "gyldigFra": "2020-11-06",
+                          "gyldigTil": null
+                        },
+                        "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                      }
+                    ],
+                    "attributter": [
+                      {
+                        "sekvensnr": 0,
+                        "type": "FUNKTION",
+                        "vaerditype": "string",
+                        "vaerdier": [
+                          {
+                            "vaerdi": "Stiftere",
+                            "periode": {
+                              "gyldigFra": "2020-11-06",
+                              "gyldigTil": null
+                            },
+                            "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                          }
+                        ]
+                      }
+                    ],
+                    "medlemsData": [
+                      {
+                        "attributter": [
+                          {
+                            "sekvensnr": 0,
+                            "type": "FUNKTION",
+                            "vaerditype": "string",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "STIFTERE",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "enhedsNummerOrganisation": 4008634788,
+                    "hovedtype": "REGISTER",
+                    "organisationsNavn": [
+                      {
+                        "navn": "EJERREGISTER",
+                        "periode": {
+                          "gyldigFra": "2020-11-06",
+                          "gyldigTil": null
+                        },
+                        "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                      }
+                    ],
+                    "attributter": [
+                      {
+                        "sekvensnr": 0,
+                        "type": "FUNKTION",
+                        "vaerditype": "string",
+                        "vaerdier": [
+                          {
+                            "vaerdi": "EJERREGISTER",
+                            "periode": {
+                              "gyldigFra": "2020-11-06",
+                              "gyldigTil": null
+                            },
+                            "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                          }
+                        ]
+                      }
+                    ],
+                    "medlemsData": [
+                      {
+                        "attributter": [
+                          {
+                            "sekvensnr": 0,
+                            "type": "EJERANDEL_PROCENT",
+                            "vaerditype": "decimal",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "1.0",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          },
+                          {
+                            "sekvensnr": 0,
+                            "type": "EJERANDEL_STEMMERET_PROCENT",
+                            "vaerditype": "decimal",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "1.0",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "enhedsNummerOrganisation": 4008634787,
+                    "hovedtype": "REGISTER",
+                    "organisationsNavn": [
+                      {
+                        "navn": "Reelle ejere",
+                        "periode": {
+                          "gyldigFra": "2020-11-06",
+                          "gyldigTil": null
+                        },
+                        "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                      }
+                    ],
+                    "attributter": [
+                      {
+                        "sekvensnr": 0,
+                        "type": "FUNKTION",
+                        "vaerditype": "string",
+                        "vaerdier": [
+                          {
+                            "vaerdi": "Reelle ejere",
+                            "periode": {
+                              "gyldigFra": "2020-11-06",
+                              "gyldigTil": null
+                            },
+                            "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                          }
+                        ]
+                      }
+                    ],
+                    "medlemsData": [
+                      {
+                        "attributter": [
+                          {
+                            "sekvensnr": 0,
+                            "type": "EJERANDEL_PROCENT",
+                            "vaerditype": "decimal",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "1",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          },
+                          {
+                            "sekvensnr": 0,
+                            "type": "EJERANDEL_STEMMERET_PROCENT",
+                            "vaerditype": "decimal",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "1",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          },
+                          {
+                            "sekvensnr": 0,
+                            "type": "FUNKTION",
+                            "vaerditype": "string",
+                            "vaerdier": [
+                              {
+                                "vaerdi": "Reel ejer",
+                                "periode": {
+                                  "gyldigFra": "2020-11-06",
+                                  "gyldigTil": null
+                                },
+                                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "fusioner": [],
+            "spaltninger": [],
+            "virksomhedMetadata": {
+              "nyesteNavn": {
+                "navn": "Shine Holding ApS",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              },
+              "nyesteBinavne": [],
+              "nyesteVirksomhedsform": {
+                "virksomhedsformkode": 80,
+                "kortBeskrivelse": "APS",
+                "langBeskrivelse": "Anpartsselskab",
+                "ansvarligDataleverandoer": "E&S",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              },
+              "nyesteBeliggenhedsadresse": {
+                "landekode": "DK",
+                "fritekst": null,
+                "vejkode": 7120,
+                "kommune": {
+                  "kommuneKode": 101,
+                  "kommuneNavn": "KØBENHAVN",
+                  "periode": {
+                    "gyldigFra": "2007-01-01",
+                    "gyldigTil": null
+                  },
+                  "sidstOpdateret": "2006-11-13T00:00:00.000+01:00"
+                },
+                "husnummerFra": 95,
+                "adresseId": "0a3f50a0-fae6-32b8-e044-0003ba298018",
+                "sidstValideret": "2020-11-10T14:29:30.492+01:00",
+                "husnummerTil": null,
+                "bogstavFra": null,
+                "bogstavTil": null,
+                "etage": "4",
+                "sidedoer": "tv",
+                "conavn": null,
+                "postboks": null,
+                "vejnavn": "Sundholmsvej",
+                "bynavn": null,
+                "postnummer": 2300,
+                "postdistrikt": "København S",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              },
+              "nyesteHovedbranche": {
+                "branchekode": "642020",
+                "branchetekst": "Ikke-finansielle holdingselskaber",
+                "periode": {
+                  "gyldigFra": "2020-11-06",
+                  "gyldigTil": null
+                },
+                "sidstOpdateret": "2020-11-10T14:28:57.000+01:00"
+              },
+              "nyesteBibranche1": null,
+              "nyesteBibranche2": null,
+              "nyesteBibranche3": null,
+              "nyesteStatus": null,
+              "nyesteKontaktoplysninger": [],
+              "antalPenheder": 1,
+              "nyesteAarsbeskaeftigelse": null,
+              "nyesteKvartalsbeskaeftigelse": null,
+              "nyesteMaanedsbeskaeftigelse": null,
+              "nyesteErstMaanedsbeskaeftigelse": null,
+              "sammensatStatus": "NORMAL",
+              "stiftelsesDato": "2020-11-06",
+              "virkningsDato": "2020-11-06"
+            },
+            "samtId": 2,
+            "fejlRegistreret": false,
+            "dataAdgang": 0,
+            "enhedsNummer": 4008634791,
+            "enhedstype": "VIRKSOMHED",
+            "sidstIndlaest": "2021-09-10T08:23:43.530+02:00",
+            "sidstOpdateret": "2021-08-31T08:47:00.000+02:00",
+            "fejlVedIndlaesning": false,
+            "naermesteFremtidigeDato": null,
+            "fejlBeskrivelse": null,
+            "virkningsAktoer": "PO"
+          }
+        }
+      }
+    ]
+  }
+}

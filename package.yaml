@@ -1,0 +1,49 @@
+name: cvr
+version: 0.1.0
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base
+  - optparse-generic
+  - text
+  - time
+
+default-extensions:
+  - OverloadedStrings
+
+library:
+  exposed-modules:
+    - Company
+    - Participant
+    - ParticipantRelation
+    - Shared
+  source-dirs: src
+
+executables:
+  cvr:
+    main: app/Main.hs
+    dependencies:
+      - cvr
+
+tests:
+  test:
+    main: test.hs
+    source-dirs: test
+    dependencies:
+      - cvr
+      - tasty
+      - tasty-discover
+      - tasty-hspec
+      - tasty-hedgehog
+      - hedgehog
+      - hspec
+
+benchmarks:
+  bench:
+    main: bench.hs
+    source-dirs: bench
+    dependencies:
+      - cvr
+      - tasty-bench
+    ghc-options: -O2
