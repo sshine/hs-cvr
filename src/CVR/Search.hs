@@ -5,14 +5,17 @@ module CVR.Search where
 import Data.Aeson
 import Data.Maybe (fromJust)
 import Data.Text (Text)
+import Data.Text as Text
 import Data.Text.Encoding as Text
 import Data.ByteString (ByteString)
+import Data.ByteString.Char8 as BS
 import qualified Data.Vector as Vector
 import Text.Heterocephalus
 import Text.Blaze.Renderer.Utf8 as Blaze
 import Control.Monad.IO.Class
 import Network.HTTP.Req
 import System.Environment as Env
+import Control.Retry as Retry
 
 data SearchQuery
   = NameSearch Text
@@ -34,13 +37,24 @@ instance ToJSON SearchQuery where
 
 searchReq :: SearchQuery -> IO ()
 searchReq searchQuery = do
-  cvrUser <- Env.getEnv "CVR_USER"
-  cvrPass <- Env.getEnv "CVR_PASS"
-  runReq defaultHttpConfig $ do
+  cvrHost <- Text.pack <$> Env.getEnv "CVR_HOST"
+  cvrPort <- read <$> Env.getEnv "CVR_PORT"
+  cvrUser <- BS.pack <$> Env.getEnv "CVR_USER"
+  cvrPass <- BS.pack <$> Env.getEnv "CVR_PASS"
+  runReq tmpHttpConfig $ do
     let payload = toJSON searchQuery
-    r <- req POST (https "distribution.virk.dk" :/ "/cvr-permanent/virksomhed/_search")
+    r <- req POST (https cvrHost /: "/cvr-permanent/virksomhed/_search")
                   (ReqBodyJson payload)
-                  jsonResponse
-                  (basicAuth cvrUser cvrPass)
+                  bsResponse -- jsonResponse
+                  (basicAuth cvrUser cvrPass <> port cvrPort)
 
-    liftIO $ print (responseBody r :: Value)
+    -- liftIO $ print (responseBody r :: Value)
+    liftIO $ print (responseBody r :: ByteString)
+  where
+    tmpHttpConfig = defaultHttpConfig
+      { httpConfigRetryPolicy = tmpRetryPolicy
+      }
+
+tmpRetryPolicy :: (Monad m) => RetryPolicyM m
+tmpRetryPolicy = Retry.constantDelay 50 <> Retry.limitRetries 1
+

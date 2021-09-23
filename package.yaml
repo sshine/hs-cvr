@@ -14,6 +14,7 @@ dependencies:
   - heterocephalus
   - blaze-markup
   - req
+  - retry
 
 default-extensions:
   - OverloadedStrings
