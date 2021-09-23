@@ -1,0 +1,13 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "Vrvirksomhed.cvrNummer": "#{cvrNumber}"
+          }
+        }
+      ]
+    }
+  }
+}

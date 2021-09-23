@@ -1,5 +1,5 @@
 
-module Shared where
+module CVR.Shared where
 
 import Data.Text (Text)
 import Data.Time.Clock (NominalDiffTime)

@@ -7,8 +7,8 @@ import Data.Maybe (fromMaybe)
 import Data.Vector (Vector)
 import qualified Data.Vector as Vector
 
-import Shared
-import Company
+import CVR.Shared
+import CVR.Company
 import EventSourcing
 
 shineSearch :: FilePath

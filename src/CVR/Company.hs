@@ -1,12 +1,12 @@
 
-module Company where
+module CVR.Company where
 
 import Data.Text (Text)
 import Data.Time.Clock (NominalDiffTime)
 
-import Shared
-import Participant
-import ParticipantRelation
+import CVR.Shared
+import CVR.Participant
+import CVR.ParticipantRelation
 
 data Company f = Company
   { companyName                :: f Text

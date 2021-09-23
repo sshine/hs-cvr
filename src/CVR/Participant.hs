@@ -1,10 +1,10 @@
 
-module Participant where
+module CVR.Participant where
 
 import Data.Text (Text)
 import Data.Time.Clock (NominalDiffTime)
 
-import Shared
+import CVR.Shared
 
 data Participant f = Participant
   { participantType    :: f ParticipantType

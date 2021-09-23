@@ -15,18 +15,24 @@ dependencies:
   - blaze-markup
   - req
   - retry
+  - mtl
 
 default-extensions:
   - OverloadedStrings
+  - LambdaCase
+  - RecordWildCards
   - StandaloneDeriving
   - FlexibleContexts
 
 library:
   exposed-modules:
-    - Company
-    - Participant
-    - ParticipantRelation
-    - Shared
+    - CVR
+    - CVR.Company
+    - CVR.Participant
+    - CVR.ParticipantRelation
+    - CVR.Shared
+    - CVR.Main
+    - CVR.Config
     - CVR.Search
   source-dirs: src
 

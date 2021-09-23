@@ -1,61 +1,70 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TemplateHaskell #-}
 
 module CVR.Search where
 
-import Data.Aeson
+import Control.Monad.Reader (reader, liftIO)
+
 import Data.Maybe (fromJust)
 import Data.Text (Text)
-import Data.Text as Text
-import Data.Text.Encoding as Text
-import Data.ByteString (ByteString)
-import Data.ByteString.Char8 as BS
-import qualified Data.Vector as Vector
+import qualified Data.Text as Text
+import qualified Data.Text.Encoding as Text
+import qualified Data.ByteString.Lazy as LBS
+import qualified Data.ByteString.Char8 as BS
+
+import Data.Aeson
 import Text.Heterocephalus
-import Text.Blaze.Renderer.Utf8 as Blaze
-import Control.Monad.IO.Class
 import Network.HTTP.Req
-import System.Environment as Env
-import Control.Retry as Retry
+
+import qualified Text.Blaze as Blaze
+import qualified Text.Blaze.Renderer.Utf8 as Blaze
+import qualified System.Environment as Env
+
+import CVR (CVR)
+import CVR.Config (Config(..))
+import CVR.Company
 
 data SearchQuery
-  = NameSearch Text
---  | CvrNumberSearch CvrNumber
+  = CompanyNameSearch Text
+  | CompanyNumberSearch CompanyNumber
   deriving (Eq, Ord, Show)
 
--- FIXME: JSON Escape queryString
-nameSearchTemplate :: Text -> Value
-nameSearchTemplate queryString =
-  fromJust (decode (Blaze.renderMarkup $(compileTextFile "templates/nameSearchTemplate.json.tmpl")))
+companyNameSearch :: Text -> Value
+companyNameSearch queryStringUnsafe =
+  -- FIXME: This is so ugly there has to be a better way.
+  let queryString = Text.decodeUtf8 (LBS.toStrict (encode (String queryStringUnsafe)))
+  in renderTemplate $(compileTextFile "templates/companyNameSearch.tmpl.json")
 
---cvrNumberSearchTemplate :: CvrNumber -> Value
+-- TODO: Cover missing CompanyNumber types
+companyNumberSearch :: CompanyNumber -> Value
+companyNumberSearch (CompanyNumber CvrNumber cvrNumber) =
+  renderTemplate $(compileTextFile "templates/companyNumberSearch.tmpl.json")
+
+renderTemplate :: Blaze.Markup -> Value
+renderTemplate = fromJust . decode . Blaze.renderMarkup
 
 instance ToJSON SearchQuery where
-  toJSON (NameSearch queryString) =
-    nameSearchTemplate queryString
+  toJSON (CompanyNameSearch queryString) =
+    companyNameSearch queryString
+
+  toJSON (CompanyNumberSearch companyNumber) =
+    companyNumberSearch companyNumber
 
 -- curl -v -u "$CVR_USER:$CVR_PASS" -H "Content-Type: application/json" -XPOST "$URL" -d"$QUERY"
+cvrSearchReq :: SearchQuery -> CVR Value
+cvrSearchReq searchQuery =
+  cvrPostReq "cvr-permanent/virksomhed/_search" searchQuery
 
-searchReq :: SearchQuery -> IO ()
-searchReq searchQuery = do
-  cvrHost <- Text.pack <$> Env.getEnv "CVR_HOST"
-  cvrUser <- BS.pack <$> Env.getEnv "CVR_USER"
-  cvrPass <- BS.pack <$> Env.getEnv "CVR_PASS"
-  runReq tmpHttpConfig $ do
-    let payload = toJSON searchQuery
-    r <- req POST (http cvrHost /: "cvr-permanent/virksomhed/_search")
-                  (ReqBodyJson payload)
-                  jsonResponse -- bsResponse
-                  (basicAuthUnsafe cvrUser cvrPass)
-
-    liftIO $ print (responseBody r :: Value)
-    -- liftIO $ print (responseBody r :: ByteString)
-  where
-    tmpHttpConfig = defaultHttpConfig
-      { httpConfigRetryPolicy = tmpRetryPolicy
-      }
-
-tmpRetryPolicy :: (Monad m) => RetryPolicyM m
-tmpRetryPolicy = Retry.constantDelay 50 <> Retry.limitRetries 1
+cvrPostReq :: ToJSON body => Text -> body -> CVR Value
+cvrPostReq url body = do
+  cvrHost <- reader configCvrHost
+  cvrUser <- reader configCvrUser
+  cvrPass <- reader configCvrPass
+  runReq defaultHttpConfig $ do
+    let auth = basicAuthUnsafe cvrUser cvrPass
+        endpoint = http cvrHost /: url
+        payload = toJSON body
+    responseBody <$> req POST endpoint (ReqBodyJson payload) jsonResponse auth
 
 mappingReq :: IO ()
 mappingReq = do
