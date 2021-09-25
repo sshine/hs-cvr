@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 
 module CVR.Main where
 
@@ -13,5 +14,6 @@ main = loadConfig >>= runReaderT app
 
 app :: CVR ()
 app = do
-  result <- cvrSearchReq (CompanyNumberSearch (CompanyNumber CvrNumber 41834226))
+  -- result <- cvrSearchReq (CompanyNumberSearch (CompanyNumber CvrNumber 41834226))
+  result <- cvrSearchReq (CompanyNameSearch "Shine Holding")
   liftIO (print result)

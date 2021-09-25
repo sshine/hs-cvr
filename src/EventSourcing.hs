@@ -1,3 +1,4 @@
+{-# LANGUAGE StandaloneDeriving #-}
 
 module EventSourcing where
 
@@ -9,8 +10,8 @@ data Knowledge property = Knowledge
   , knowledgeTime :: KnowledgeTime
   }
 
---deriving instance Eq property => Eq (Knowledge property)
---deriving instance Ord property => Ord (Knowledge property)
+deriving instance Eq property => Eq (Knowledge property)
+deriving instance Ord property => Ord (Knowledge property)
 deriving instance Show property => Show (Knowledge property)
 
 data KnowledgeTime

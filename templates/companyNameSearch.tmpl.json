@@ -6,7 +6,7 @@
         {
           "match_phrase_prefix": {
             "Vrvirksomhed.virksomhedMetadata.nyesteNavn.navn": {
-              "query": "#{queryString}",
+              "query": #{queryString},
               "max_expansions": 100
             }
           }
